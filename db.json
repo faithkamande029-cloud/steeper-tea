@@ -13,6 +13,13 @@
       "origin": "Kericho Kenya",
       "price": 210,
       "id": "HsAp1qBSdMw"
+    },
+    {
+      "name": "Love Tea",
+      "description": "An indulgent and romantic blend of black tea, vanilla, rose, strawberry, raspberry, and cherry",
+      "origin": "Kericho, Kenya",
+      "price": 300,
+      "id": "EcrTh3KjL6g"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

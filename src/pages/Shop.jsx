@@ -18,7 +18,7 @@ function Shop() {
     )
 
     const handleDelete = async(id) => {
-        await fetch(`http://localhost:3001/teas${id}`,{
+        await fetch(`http://localhost:3001/teas/${id}`,{
             method: "DELETE",
         });
         setTeas((prev) => prev.filter((tea) => tea.id !== id));
@@ -27,16 +27,29 @@ function Shop() {
   return (
     <div className='bg-green-200'>
         <Navbar />
-        <input 
-            type="text" 
-            placeholder='Search'
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className='bg-white flex p-2 text-md rounded-2xl w-200 m-3'
-        />
-        {filteredTeas.map((tea) => (
-            <TeaCard key={tea.id} tea={tea} onDelete={handleDelete}/>
-        ))}
+        <div className='flex'>
+            <input 
+                type="text" 
+                placeholder='Search...'
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className='bg-white p-2 rounded-2xl w-300 ml-3'
+            />
+            <button className='bg-green-700 px-2 rounded-2xl w-25 text-white font-bold onClick={() => setSearch(input)}'>Search</button>
+
+        </div>
+        
+        <div className='grid grid-cols-3 md:grid-cols-2 lg:grid-cols-4 p-4'>
+            {filteredTeas.map((tea) => (
+            <TeaCard 
+                key={tea.id} 
+                tea={tea} 
+                onDelete={handleDelete}
+            />
+            ))}
+
+        </div>
+        
     </div>
   );
 }
