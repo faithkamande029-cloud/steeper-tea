@@ -26,12 +26,15 @@ export default function Home() {
         </div>
 
     <div className='shop'>
+      <div className="flex justify-between items-center ">
+      <h1 className='text-2xl font-bold'>Our unique Teas</h1>
       <Link 
         to='/shop'
-        className='hover:underline'
+        className='hover:underline '
       >
         See more
       </Link>
+      </div>
     </div>
         
         

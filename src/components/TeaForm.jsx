@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 function TeaForm( { onSubmit }) {
     const [name, setName] = useState("");
@@ -9,23 +9,45 @@ function TeaForm( { onSubmit }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const form = e.currentTarget;
 
         onSubmit({
-            name,
-            description,
-            origin,
+            name: name.trim(),
+            description: description.trim(),
+            origin: origin.trim(),
             price: Number(price),
             photo
         });
 
-        setName("")
-        setDescription("")
-        setOrigin("")
-        setPrice("")
-        setPhoto(null)
-
-        e.target.reset();
+        if (ok) {
+            setName("")
+            setDescription("")
+            setOrigin("")
+            setPrice("")
+            setPhoto(null)
+            form.reset();
+        }
     };
+
+    const handlePhoto = (e) => {
+        const file = e.target.files[0];
+
+        if (!file) {
+            setPhoto(null);
+            return;
+        }
+
+        if (file && file.size > 500 * 1024) {
+            alert("Image must be smaller than 500 KB");
+            e.target.value = "";
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onloadend = () => setPhoto(reader.result);
+        reader.readAsDataURL(file);
+    };
+        
 
   return (
     <div className='h-screen w-full bg-[#eadfe5]'>
@@ -94,31 +116,17 @@ function TeaForm( { onSubmit }) {
                 type="file"
                 id="photo"
                 accept="image/*" 
-                placeholder='No file chosen'
+                placeholder='Upload photo'
                 className='bg-[#F0ECEC] p-2 rounded-xl text-gray-500'
-                onChange={(e) => {
-                    const file = e.target.files[0]
-
-                    if (file && file.size > 500 * 1024) {
-                        alert("Image must be smaller than 500 KB");
-                        e.target.value = "";
-                        return;
-                    }
-
-                    if (file) {
-                        const reader = new FileReader();
-                        reader.onloadend = () => {
-                            setPhoto(reader.result);
-                        };
-
-                        reader.readAsDataURL(file);
-                    }
-                    
-                }}
+                onChange={handlePhoto}
                 
             />            
             
-            <button className='bg-[#8D4B6E] p-2 font-bold text-white rounded-3xl w-full'>Submit</button>
+            <button 
+                className='bg-[#8D4B6E] p-2 font-bold text-white rounded-3xl w-full'
+            >
+                Submit
+            </button>
 
         </form>
         

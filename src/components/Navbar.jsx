@@ -16,7 +16,7 @@ function Navbar() {
         <NavLink 
             to="/shop"
             className={({isActive}) => isActive 
-            ? "text-green-900 font-bold underline"
+            ? "text-black-900 font-bold underline"
             : "text-amber-800"
             }
         >
@@ -25,7 +25,7 @@ function Navbar() {
         <NavLink 
             to="/adminportal"
             className={({isActive}) => isActive 
-            ? "text-green-900 font-bold underline"
+            ? "text-black-900 font-bold underline"
             : "text-amber-800"
             }
         >

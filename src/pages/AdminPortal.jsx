@@ -20,23 +20,27 @@ export default function AdminPortal() {
 
     const handleSubmit = async(tea) => {
 
-        console.log(tea);
-        console.log(tea.photo?.length);
+        try{ 
+            const response = await fetch("http://localhost:3001/teas",{
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(tea),
+            });
 
-        const response = await fetch("http://localhost:3001/teas",{
-            method: "POST",
-            header: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(tea),
-        });
+            if(!response.ok){
+                const text = await response.text();
+                console.error("Failed to add tea:", response.status, text);
+                return false;
+            }
 
-        if (!response.ok) {
-            console.log("Error:", await response.text());
-            return;
+            await fetchData();
+            return true;
+        } catch (error) {
+            console.error("Error adding tea:", error);
+            return false;
         }
-
-        await fetchData();
     };
 
   return (
