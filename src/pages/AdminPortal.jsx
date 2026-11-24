@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import TeaForm from '../components/TeaForm';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -19,14 +19,24 @@ export default function AdminPortal() {
     }, [])
 
     const handleSubmit = async(tea) => {
-        await fetch("http://localhost:3001/teas",{
-            method: "Post",
+
+        console.log(tea);
+        console.log(tea.photo?.length);
+
+        const response = await fetch("http://localhost:3001/teas",{
+            method: "POST",
             header: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(tea),
-        })
-        fetchData(); //refresh list after adding
+        });
+
+        if (!response.ok) {
+            console.log("Error:", await response.text());
+            return;
+        }
+
+        await fetchData();
     };
 
   return (

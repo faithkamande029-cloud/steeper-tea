@@ -1,23 +1,38 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import pinkCap from '../assets/2.jpg'
+import TeaCard from '../components/TeaCard'
 
 export default function Home() {
   return (
-    <div className='h-screen w-full bg-[url(./assets/Tea-leaves.jpg)] bg-cover bg-center'>
+    <div
+      style={{backgroundImage: `url(${pinkCap})` }} 
+      className='h-screen w-full bg-cover bg-top-left bg-no-repeat m-5'
+    >
         <Navbar />
-        <div className='flex h-screen flex-col justify-center text-center items-center'>
-            <h1 className='text-6xl font-bold'>Steeper Tea House</h1>
-            <p className='text-2xl'> Crafted for Tea Lovers</p>
+        <div 
+          className='flex h-screen flex-col m-5'
+        >
+            <h1 className='text-3xl font-bold'>Steeper Tea House</h1>
+            <p className='text-md'> Crafted for Tea Lovers</p>
 
             <Link 
                 to="/shop"
-                className='mt-5 border-black p-2 bg-green-600 hover:bg-green-700 rounded
+                className='mt-5 border-black p-2 bg-pink-950 hover:bg-green-700 rounded-3xl
                  text-white w-50 font-medium flex justify-center'
             >
-            Explore Teas
+            Explore
             </Link>
         </div>
+
+    <div className='shop'>
+      <Link 
+        to='/shop'
+        className='hover:underline'
+      >
+        See more
+      </Link>
+    </div>
         
         
     </div>

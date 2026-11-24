@@ -1,26 +1,5 @@
 {
   "teas": [
-    {
-      "name": "Hangover tea",
-      "description": "An uplifting, natural herbal and green tea blend designed to soothe the mind and body after a long night out",
-      "origin": "Kericho, kenya",
-      "price": 200,
-      "id": "SgrS-1lf3R0"
-    },
-    {
-      "name": "Pure Kenyan Black Tea",
-      "description": "The flagship blend; rich, robust, and finely balanced in strength and aroma. Harvested from the finest tea young buds",
-      "origin": "Kericho Kenya",
-      "price": 210,
-      "id": "HsAp1qBSdMw"
-    },
-    {
-      "name": "Love Tea",
-      "description": "An indulgent and romantic blend of black tea, vanilla, rose, strawberry, raspberry, and cherry",
-      "origin": "Kericho, Kenya",
-      "price": 300,
-      "id": "EcrTh3KjL6g"
-    }
   ],
   "$schema": "./node_modules/json-server/schema.json"
 }

@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom'
 
 function Navbar() {
   return (
-    <div className='flex justify-between pl-8 pr-8 p-2.5 bg-green-200'>
+    <div className='flex gap-3'>
         <NavLink 
             to="/"
             className={({isActive}) => isActive 
-            ? "text-green-900 font-bold underline"
+            ? "text-black font-bold underline"
             : "text-amber-800"
             }
         >

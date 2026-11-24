@@ -1,25 +1,45 @@
-import React from 'react'
 
 export default function TeaCard({ tea, onDelete }) {
     if(!tea) return null;
     
   return (
-    <div className='bg-green-200 p-4 m2 h-screen'>
+    <div className='bg-white rounded-xl'>
 
-        <div className='bg-green-50 w-60 h-90 rounded-xl p-4 shadow-2xl flex flex-col gap-4'>
-            <h2 className='font-bold text-xl line-clamp-1'>{tea.name}</h2>
-            <p className='line-clamp-4'>{tea.description}</p>
-            <p>{tea.origin}</p>
-            <p className='font-bold'>{tea.price}</p>    
+        {/* Tea image */}
+            <img
+                src={tea.image}
+                alt={tea.name}
+                className='w-full h-40 object-cover rounded-t-2xl'   
+            />
 
-            <button
-                onClick={() => onDelete(tea.id)}
-                className='bg-red-500 text-white px-2 py-1 mt-2'
-            >
-                Delete            
-            </button> 
+            {/* product details */}
+            <div className="p-4 flex flex-col gap-2">
+                <h2 
+                    className='font-bold text-lg text-amber-800'
+                >
+                    {tea.name}
+                </h2>
+                <p 
+                    className='line-clamp-2 text-sm text-gray-600'
+                >
+                    {tea.description}
+                </p>
+                <p 
+                    className="text-sm text-gray-500"
+                >
+                    {tea.origin}
+                </p>
+                <p className='font-bold text-yellow-600'>Ksh {tea.price}</p>    
 
-        </div>
+                <button
+                    onClick={() => onDelete(tea.id)}
+                    className='bg-pink-900 rounded-3xl text-white p-1 pl-3 pr-3 mt-2 flex items-center justify-center'
+                >
+                    Buy Item         
+                </button> 
+            </div>
+
+        
            
         
     </div>

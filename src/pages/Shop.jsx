@@ -25,7 +25,7 @@ function Shop() {
     }
 
   return (
-    <div className='bg-green-200'>
+    <div className='bg-pink-50 h-screen'>
         <Navbar />
         <div className='flex justify-center pt-3'>
             <input 
@@ -35,7 +35,12 @@ function Shop() {
                 onChange={(e) => setSearch(e.target.value)}
                 className='bg-white p-2 pl-5 rounded-2xl w-250 '
             />
-            <button className='bg-green-700 px-2 rounded-2xl w-25 text-white font-bold onClick={() => setSearch(input)}'>Search</button>
+            <button
+                onClick={() => setSearch(search)} 
+                className='bg-pink-900 px-2 rounded-2xl w-25 text-white font-bold'
+            >
+                Search
+            </button>
 
         </div>
         
