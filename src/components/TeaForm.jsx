@@ -50,7 +50,7 @@ function TeaForm( { onSubmit }) {
         
 
   return (
-    <div className='h-screen w-full bg-[#eadfe5]'>
+    <div className='h-screen w-full'>
 
         <div className='p-4'>
             <h1 
@@ -65,15 +65,15 @@ function TeaForm( { onSubmit }) {
             
         <form 
             onSubmit={handleSubmit}
-            className='backdrop-blur-sm bg-white/20 
-            rounded-xl border w-150 flex flex-col p-5 gap-5 m-4'>
+            className='backdrop-blur-sm bg-pink-50/60 
+            rounded-xl border w-150 flex flex-col p-5 gap-5 m-4 shadow-2xl '>
 
             <h1 className='pb-3 font-bold text-3xl flex justify-center'>Add New Tea</h1>
             <label htmlFor='name' className='font-bold'>Tea Name:</label>
             <input 
                 type="text" 
                 placeholder='e.g Kericho gold'
-                className='bg-white p-2 rounded-xl'
+                className='bg-[#e0d1dd] p-2 rounded-xl'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -84,7 +84,7 @@ function TeaForm( { onSubmit }) {
             <textarea 
                 type="text" 
                 placeholder='description...'
-                className='bg-white p-2 rounded-xl'
+                className='bg-[#e0d1dd] p-2 rounded-xl'
                 value={description}
                 rows="3"
                 onChange={(e) => setDescription(e.target.value)}
@@ -95,7 +95,7 @@ function TeaForm( { onSubmit }) {
             <input 
                 type="text" 
                 placeholder='Region, country'
-                className='bg-white p-2 pl-3 rounded-xl'
+                className='bg-[#e0d1dd] p-2 pl-3 rounded-xl'
                 value={origin}
                 onChange={(e) => setOrigin(e.target.value)}
                 required
@@ -104,8 +104,8 @@ function TeaForm( { onSubmit }) {
             <label htmlFor='price' className='font-bold'> Price(Ksh): </label>
             <input 
                 type="number" 
-                placeholder='price'
-                className='bg-[#d8d4d4] p-2 rounded-xl'
+                placeholder='Price'
+                className='bg-[#e0d1dd] p-2 rounded-xl'
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
                 required
@@ -117,7 +117,7 @@ function TeaForm( { onSubmit }) {
                 id="photo"
                 accept="image/*" 
                 placeholder='Upload photo'
-                className='bg-[#F0ECEC] p-2 rounded-xl text-gray-500'
+                className='bg-[#e0d1dd] p-2 rounded-xl text-gray-500'
                 onChange={handlePhoto}
                 
             />            

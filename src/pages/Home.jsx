@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import Navbar from '../components/Navbar'
+import HomeNavbar from '../components/HomeNavbar'
 import pinkCap from '../assets/hero-img-1.jpg'
 import TeaCard from '../components/TeaCard'
 import Footer from '../components/Footer'
@@ -20,7 +20,7 @@ export default function Home() {
         style={{backgroundImage: `url(${pinkCap})` }} 
         className='bg-cover bg-top-left bg-no-repeat '
       >
-          <Navbar />
+          <HomeNavbar />
 
           {/* Hero section */}
           <div 
