@@ -56,7 +56,7 @@ function Shop() {
         </p>
       )}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4 m-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 p-4 m-10">
         {filteredTeas.map((tea) => (
           <TeaCard 
             key={tea.id} 

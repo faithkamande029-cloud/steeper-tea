@@ -1,9 +1,8 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 function Navbar() {
   return (
-    <div className='flex gap-3'>
+    <div className='flex gap-7 text-lg px-5 p-5'>
         <NavLink 
             to="/"
             className={({isActive}) => isActive 

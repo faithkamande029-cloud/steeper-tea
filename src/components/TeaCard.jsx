@@ -3,7 +3,7 @@ export default function TeaCard({ tea, onBuy }) {
     if(!tea) return null;
     
   return (
-    <div className='bg-white rounded-xl shadow-xl overflow-hidden '>
+    <div className='bg-white rounded-xl shadow-2xl overflow-hidden '>
 
         {/* Tea image */}
             <img
