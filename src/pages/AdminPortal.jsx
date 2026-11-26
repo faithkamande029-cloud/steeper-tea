@@ -46,7 +46,7 @@ export default function AdminPortal() {
     const handleDelete = async (id) => {
         if(!window.confirm("Remove this tea from the shop")) return;
 
-        const res = await fetch("http://localhost:3001/teas/${id}", {
+        const res = await fetch(`http://localhost:3001/teas/${id}`, {
             method: "DELETE",
         });
 
@@ -56,9 +56,21 @@ export default function AdminPortal() {
     };
 
   return (
-    <div>
-        <Navbar />   
-        <div className='grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-10  bg-[#eadfe5]'>    
+    <div className='bg-[#e4bcd3a4] min-h-screen flow-root'>
+        <Navbar /> 
+        <div className="text-[#8D4B6E] border mt-2"></div>
+         <div className='p-4 text-center'>
+            <h1 
+                className='font-Jacques text-3xl text-[#8D4B6E] font-bold '
+            >
+                Admin Portal
+            </h1>
+            <p className='text-[#8D4B6E] text-sm '>
+                Add a tea to the shop, or remove one you no longer sell.
+            </p>
+            
+        </div>  
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 max-w-7xl mx-auto px-4 sm:px-6 py-4 pt-3 items-start '>    
             <TeaForm onSubmit={handleSubmit}/>
             <TeaList teas={teas} onDelete={handleDelete}/>
         </div> 

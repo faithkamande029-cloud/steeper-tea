@@ -1,12 +1,10 @@
-import React from 'react'
-
 function TeaList({ teas, onDelete }) {
     if (teas.length === 0) {
         return <p className='p-4 text-pink-700'>No teas in the shop yet.</p>
     }
   return (
     <div className='m-4 bg-[#CFB5C8] border rounded-xl p-5 w-full max-w-xl'>
-        <h2 className='font-bold'>Current Teas</h2>
+        <h2 className='font-bold text-[#8D4B6E]'>Current Teas In the shop</h2>
 
         <ul>
             {teas.map((tea) => (

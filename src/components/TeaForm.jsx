@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { CATEGORIES } from '../constants/categories';
 
 function TeaForm( { onSubmit }) {
     const [name, setName] = useState("");
@@ -6,15 +7,17 @@ function TeaForm( { onSubmit }) {
     const [origin, setOrigin] = useState("");
     const [price, setPrice] = useState("");
     const [photo, setPhoto] = useState(null);
+    const [category, setCategory] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const form = e.currentTarget;
 
-        onSubmit({
+        const ok = await onSubmit({
             name: name.trim(),
             description: description.trim(),
             origin: origin.trim(),
+            category,
             price: Number(price),
             photo
         });
@@ -25,6 +28,7 @@ function TeaForm( { onSubmit }) {
             setOrigin("")
             setPrice("")
             setPhoto(null)
+            setCategory("")
             form.reset();
         }
     };
@@ -50,27 +54,19 @@ function TeaForm( { onSubmit }) {
         
 
   return (
-    <div className='h-screen w-full'>
+    <div className='w-full'>
 
-        <div className='p-4'>
-            <h1 
-                className='font-bold text-2xl'
-            >
-                Admin Portal
-            </h1>
-            <p className='text-gray-500 text-sm'>
-                Add a tea to the shop, or remove one you no longer sell.
-            </p>
-        </div>
+       
             
         <form 
             onSubmit={handleSubmit}
             className='backdrop-blur-sm bg-pink-50/60 
-            rounded-xl border w-150 flex flex-col p-5 gap-5 m-4 shadow-2xl '>
+            rounded-xl border w-full flex flex-col p-5 gap-5 m-4 shadow-2xl '>
 
             <h1 className='pb-3 font-bold text-3xl flex justify-center'>Add New Tea</h1>
             <label htmlFor='name' className='font-bold'>Tea Name:</label>
             <input 
+                id='name'
                 type="text" 
                 placeholder='e.g Kericho gold'
                 className='bg-[#e0d1dd] p-2 rounded-xl'
@@ -82,6 +78,7 @@ function TeaForm( { onSubmit }) {
             <label htmlFor='description' className='font-bold'>
                 Description:</label>
             <textarea 
+                id='description'
                 type="text" 
                 placeholder='description...'
                 className='bg-[#e0d1dd] p-2 rounded-xl'
@@ -93,6 +90,7 @@ function TeaForm( { onSubmit }) {
             
             <label htmlFor='origin' className='font-bold'> Origin: </label>            
             <input 
+                id='origin'
                 type="text" 
                 placeholder='Region, country'
                 className='bg-[#e0d1dd] p-2 pl-3 rounded-xl'
@@ -100,9 +98,29 @@ function TeaForm( { onSubmit }) {
                 onChange={(e) => setOrigin(e.target.value)}
                 required
             />
+            <label htmlFor='category' className='font-bold'>Category: </label>            
+            <select 
+                id="category" 
+                className='bg-white p-2 pl-3 rounded-xl'
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                required
+            >
+                <option value="" disabled>Select a category</option>
+                {CATEGORIES.map((c) => (
+                    <option 
+                        key={c} 
+                        value={c}
+                    >
+                        {c}
+                    </option>
+                ))}
+
+            </select>
             
             <label htmlFor='price' className='font-bold'> Price(Ksh): </label>
             <input 
+                id='price'
                 type="number" 
                 placeholder='Price'
                 className='bg-[#e0d1dd] p-2 rounded-xl'
@@ -112,9 +130,9 @@ function TeaForm( { onSubmit }) {
             />
 
             <label htmlFor="photo" className='font-bold'> Photo: </label>
-            <input 
-                type="file"
-                id="photo"
+            <input
+                id="photo" 
+                type="file"                
                 accept="image/*" 
                 placeholder='Upload photo'
                 className='bg-[#e0d1dd] p-2 rounded-xl text-gray-500'

@@ -20,16 +20,17 @@ export default function TeaCard({ tea, onBuy }) {
                     {tea.name}
                 </h2>
                 <p 
+                    className="text-sm text-gray-500"
+                >
+                    {tea.category} &middot; {tea.origin} 
+                </p>
+                <p 
                     className='line-clamp-2 text-sm text-gray-600'
                 >
                     {tea.description}
                 </p>
-                <p 
-                    className="text-sm text-gray-500"
-                >
-                    {tea.origin}
-                </p>
-                <p className='font-bold text-yellow-600'>Ksh {Number(tea.price).toLocaleString()}</p>    
+                
+                <p className='font-bold text-yellow-600'> Ksh {Number(tea.price).toLocaleString()}</p>    
 
                 <button
                     type="button"
