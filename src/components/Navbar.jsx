@@ -1,4 +1,5 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
+import logo from '../assets/Steeper logo.png'
 
 function Navbar() {
     const linkClass = ({isActive}) => 
@@ -11,11 +12,15 @@ function Navbar() {
                 : "text-pink-950"
             }`;
   return (
-    <div className='flex m-4  justify-between'>
-        <h1 className='text-[#955838] font-Intel font-bold flex items-center justify-center px-2'>
-            Steeper Tea
-        </h1>
-        <div className='flex gap-7 p-3 text-md'>
+    <div className='flex  justify-between'>
+        <Link to="/">
+            <img 
+                src={logo} 
+                alt="steeper tea logo"
+                className='w-40 p-6' 
+            />
+            </Link>
+        <div className='flex gap-7 justify-center items-center text-md'>
             <NavLink 
                 to="/"
                 className={linkClass}

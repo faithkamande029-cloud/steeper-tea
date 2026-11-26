@@ -4,6 +4,7 @@ import HomeNavbar from '../components/HomeNavbar'
 import pinkCap from '../assets/hero-img-1.jpg'
 import TeaCard from '../components/TeaCard'
 import Footer from '../components/Footer'
+import logo from '../assets/Steeper logo.png'
 
 export default function Home() {
   const [teas , setTeas] = useState([])
@@ -26,7 +27,12 @@ export default function Home() {
           <div 
             className='flex h-[58vh] flex-col px-10 justify-center'
           >
-              <h1 className='text-[#955838] font-Intel font-bold pb-5'>Steeper Tea House</h1>
+              
+              <img 
+                src={logo} 
+                alt="steeper tea logo"
+                className='w-40 pb-6' 
+              />
               <h1 className='text-4xl font-bold'>Crafted For Tea Lovers</h1>
               <p className='text-sm text-gray-500 w-70'>Single-origin teas, sourced slowly and steeped well.</p>
 

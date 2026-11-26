@@ -16,7 +16,7 @@ function HomeNavbar() {
             to="/shop"
             className={({isActive}) => isActive 
             ? "text-black-900 font-bold underline"
-            : "text-amber-800"
+            : "text-amber-800 hover:underline"
             }
         >
             Shop
@@ -25,7 +25,7 @@ function HomeNavbar() {
             to="/adminportal"
             className={({isActive}) => isActive 
             ? "text-black-900 font-bold underline"
-            : "text-amber-800"
+            : "text-amber-800 hover:underline"
             }
         >
             Admin Portal 
