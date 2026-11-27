@@ -21,7 +21,7 @@ function Shop() {
         if (!res.ok) throw new Error(`Server returned ${res.status}`);
         return res.json();
       })
-      .then(setTeas)
+      .then(data => setTeas(Array.isArray(data) ? data : data.teas ?? []))
       .catch((err) => setError(err.message));
   }, []);
 

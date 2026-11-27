@@ -18,7 +18,7 @@ export default function Home() {
       .then(res => { 
         if (!res.ok) throw new Error(`Server returned ${res.status}`)
         return res.json()})
-      .then(data => setTeas(data))
+      .then(data => setTeas(Array.isArray(data) ? data : data.teas ?? []))
       .catch((err) => console.error("Couldn't load teas:", err));
   }, []);
 
