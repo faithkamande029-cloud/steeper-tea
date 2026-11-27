@@ -40,7 +40,7 @@ function Shop() {
   };
 
   return (
-    <div className="bg-pink-50 min-h-screen m-2 px-2">
+    <div className="bg-pink-50 min-h-screen mr-2 px-2">
       
       <Navbar />
 
