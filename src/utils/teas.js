@@ -1,5 +1,6 @@
 export async function fetchTeas(url) {
   const response = await fetch(url);
+  
   if (!response.ok) {
     throw new Error(`Server returned ${response.status}`);
   }

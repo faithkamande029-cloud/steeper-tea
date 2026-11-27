@@ -7,7 +7,7 @@ export default function TeaCard({ tea, onBuy }) {
 
         {/* Tea image */}
             <img
-                src={tea.photo || 'placeholder-tea.jpg'}
+                src={tea.photo || '/images/placeholder-tea.jpg'}
                 alt={tea.name}
                 className='w-full h-48 object-cover'   
             />
