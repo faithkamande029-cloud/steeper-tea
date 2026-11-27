@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import TeaCard from "../components/TeaCard";
 import Navbar from "../components/Navbar";
 import { CATEGORIES } from "../constants/categories";
+import { fetchTeas } from "../utils/teas";
 
 const API_URL = import.meta.env.PROD
     ? "/teas.json"
@@ -16,12 +17,8 @@ function Shop() {
   const [category, setCategory] = useState("All") 
 
   useEffect(() => {
-    fetch(API_URL)
-      .then((res) => {
-        if (!res.ok) throw new Error(`Server returned ${res.status}`);
-        return res.json();
-      })
-      .then(data => setTeas(Array.isArray(data) ? data : data.teas ?? []))
+    fetchTeas(API_URL)
+      .then(setTeas)
       .catch((err) => setError(err.message));
   }, []);
 
