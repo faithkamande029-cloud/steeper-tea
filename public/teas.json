@@ -1,5 +1,4 @@
-{
-  "teas": [
+[
     {
       "name": "Pink Blush",
       "description": "A delicate pink herbal infusion with dried citrus, red flowers and fresh green leaves, offering a light, floral aroma.",
@@ -72,6 +71,4 @@
       "photo": "/images/Sage-tea.jpg",
       "id": 8
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
-}
+]
