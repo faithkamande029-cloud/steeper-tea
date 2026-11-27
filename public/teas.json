@@ -1,0 +1,77 @@
+{
+  "teas": [
+    {
+      "name": "Pink Blush",
+      "description": "A delicate pink herbal infusion with dried citrus, red flowers and fresh green leaves, offering a light, floral aroma.",
+      "origin": "Limuru, Kenya",
+      "category": "Special",
+      "price": 2050,
+      "photo": "images/Pink-blush.jpg",
+      "id": 1
+    },
+    {
+      "name": "Chinese Green Tea",
+      "description": "Whole-leaf green tea with a bright golden infusion, fresh vegetal aroma and a smooth, lingering finish.",
+      "origin": "China",
+      "category": "Herbal",
+      "price": 1856,
+      "photo": "/images/Chinesse-green-tea.jpg",
+      "id": 2
+    },
+    {
+      "name": "Black tea",
+      "description": "A rich, full-bodied black tea with a bold malty aroma, deep amber infusion and a smooth, warming finish.",
+      "origin": "Kericho, Kenya",
+      "category": "Black",
+      "price": 450,
+      "photo": "/images/Black-tea.jpg",
+      "id": 3
+    },
+    {
+      "name": "Rooibos red tea",
+      "description": "A naturally caffeine-free red tea with a smooth, earthy sweetness, warm aroma and delicate hints of honey and vanilla.",
+      "origin": "Cederberg, South Africa",
+      "category": "Other",
+      "price": 1225,
+      "photo": "/images/Rooibos.jpg",
+      "id": 4
+    },
+    {
+      "name": "Strawberry floss",
+      "description": "A delightful blend of sweet strawberries and tangy hibiscus, with a vibrant fruity aroma and a refreshing floral finish.",
+      "origin": "Kericho, Kenya",
+      "category": "Special",
+      "price": 1250,
+      "photo": "/images/Strawberry.jpg",
+      "id": 5
+    },
+    {
+      "name": "Kusmi Tea",
+      "description": "Kusmi Tea offers a refined collection of premium teas, blending quality ingredients with rich flavors and aromatic botanicals for an elegant tea experience.",
+      "origin": "Russia",
+      "category": "Special",
+      "price": 2300,
+      "photo": "/images/Kusmi.jpg",
+      "id": 6
+    },
+    {
+      "name": "Oolong tea",
+      "description": "A rich, full-bodied black tea with a bold malty aroma, deep amber infusion and a smooth, warming finish.",
+      "origin": "China",
+      "category": "Herbal",
+      "price": 2560,
+      "photo": "/images/Oolong-tea.jpg",
+      "id": 7
+    },
+    {
+      "name": "Sage tea",
+      "description": "A rich, full-bodied black tea with a bold malty aroma, deep amber infusion and a smooth, warming finish.",
+      "origin": "Mediterranean",
+      "category": "Black",
+      "price": 1325,
+      "photo": "/images/Sage-tea.jpg",
+      "id": 8
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

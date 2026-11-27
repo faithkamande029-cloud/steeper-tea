@@ -3,15 +3,20 @@ import TeaCard from "../components/TeaCard";
 import Navbar from "../components/Navbar";
 import { CATEGORIES } from "../constants/categories";
 
+const API_URL = import.meta.env.PROD
+    ? "/teas.json"
+    : "http://localhost:3001/teas"
+
+
 function Shop() {
   const [teas, setTeas] = useState([]);
   const [search, setSearch] = useState("");
   const [cart, setCart] = useState([]);
   const [error, setError] = useState("");
-  const [category, setCategory] = useState("All")
+  const [category, setCategory] = useState("All") 
 
   useEffect(() => {
-    fetch("http://localhost:3001/teas")
+    fetch(API_URL)
       .then((res) => {
         if (!res.ok) throw new Error(`Server returned ${res.status}`);
         return res.json();

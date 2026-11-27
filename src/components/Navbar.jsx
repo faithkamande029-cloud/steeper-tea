@@ -1,5 +1,5 @@
 import { NavLink, Link } from 'react-router-dom'
-import logo from '../assets/Steeper logo.png'
+import logo from '../assets/Steeper-logo.png'
 
 function Navbar() {
     const linkClass = ({isActive}) => 

@@ -4,19 +4,26 @@ import HomeNavbar from '../components/HomeNavbar'
 import pinkCap from '../assets/hero-img-1.jpg'
 import TeaCard from '../components/TeaCard'
 import Footer from '../components/Footer'
-import logo from '../assets/Steeper logo.png'
+import logo from '../assets/Steeper-logo.png'
+
+const API_URL = import.meta.env.PROD
+    ? "/teas.json"
+    : "http://localhost:3001/teas"
 
 export default function Home() {
-  const [teas , setTeas] = useState([])
+  const [teas , setTeas] = useState([])  
 
   useEffect(() => {
-    fetch("http://localhost:3001/teas")
-      .then(res => res.json())
-      .then(data => setTeas(data));
+    fetch(API_URL)
+      .then(res => { 
+        if (!res.ok) throw new Error(`Server returned ${res.status}`)
+        return res.json()})
+      .then(data => setTeas(data))
+      .catch((err) => console.error("Couldn't load teas:", err));
   }, []);
 
   return (
-    <div className='min-h-screen w-full bg white'>
+    <div className='min-h-screen w-full bg-white'>
       <div
         style={{backgroundImage: `url(${pinkCap})` }} 
         className='bg-cover bg-top-left bg-no-repeat '
