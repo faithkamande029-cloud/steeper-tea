@@ -16,7 +16,11 @@ export default function Home() {
 
   useEffect(() => {
     fetchTeas(API_URL)
-      .then(setTeas)
+      .then((data) => {
+        console.log("Fetched teas:", data);
+        console.log("Is array:", Array.isArray(data))
+        setTeas(Array.isArray(data) ? data : [])
+      })
       .catch((err) => console.error("Couldn't load teas:", err));
   }, []);
 
@@ -62,7 +66,8 @@ export default function Home() {
           </Link>
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6'>
-          {teas.slice(0, 4).map((tea) => (
+          {Array.isArray(teas) &&
+            teas.slice(0, 4).map((tea) => (
             <TeaCard
               key={tea.id}
               tea={tea}
